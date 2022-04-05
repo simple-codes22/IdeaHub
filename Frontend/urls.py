@@ -1,9 +1,9 @@
-from django.urls import path
+from django.urls import path, re_path
 from .views import index
 
 # Base URL router for the Frontend react application
 app_name = 'Frontend'
 
 urlpatterns = [
-    path('', index, name='Index'),
+    re_path(r'.*', index),
 ]

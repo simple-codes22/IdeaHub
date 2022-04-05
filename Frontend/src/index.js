@@ -1,11 +1,19 @@
 import React from 'react'
-import { render } from "react-dom";
+import Home from './components/pages/Home';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const Index = () => {
   return (
-    <div>index</div>
+    <BrowserRouter>
+      <Routes>
+        <Route index exact path='/' element={<Home />} />
+        <Route path='*' element={<p>Wrong page</p>} />
+      </Routes>
+    </BrowserRouter>
   )
 };
 
 const container = document.getElementById("app");
-render(<Index />, container);
+const root = createRoot(container);
+root.render(<Index />);
