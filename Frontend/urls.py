@@ -5,5 +5,6 @@ from .views import index
 app_name = 'Frontend'
 
 urlpatterns = [
+    # path('', index),
     re_path(r'.*', index),
 ]
