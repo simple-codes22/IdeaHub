@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './components/pages/Register';
 import { createTheme, ThemeProvider } from '@mui/material';
+import NavBar from './components/misc/NavBar';
 
 
 const siteTheme = createTheme({
@@ -21,10 +22,11 @@ const Index = () => {
   return (
     <ThemeProvider theme={siteTheme}>
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route index exact path='/' element={<Home />} />
           <Route path='register' element={<Register />} />
-          <Route path='*' element={<p>Wrong page</p>} />
+          <Route path='*' element={<Home />}/>
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
